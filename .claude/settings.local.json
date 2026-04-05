@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm search:*)",
+      "Bash(npm view:*)",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\('bin:', d.get\\('bin',{}\\)\\); print\\('keywords:', d.get\\('keywords',[]\\)\\)\")",
+      "Bash(claude mcp:*)",
+      "Bash(ls -la /Users/linmat/.claude/mcp*.json)",
+      "WebSearch",
+      "WebFetch(domain:figma.com)",
+      "WebFetch(domain:developers.figma.com)",
+      "WebFetch(domain:github.com)"
+    ]
+  }
+}
