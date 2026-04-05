@@ -1,5 +1,6 @@
 import { motion } from 'motion/react'
 import { Eye, Shield, Zap, TrendingUp, Calendar, CreditCard } from 'lucide-react'
+import Logo from './Logo'
 
 const container = {
   hidden: {},
@@ -68,7 +69,8 @@ export default function Landing({ onConnect }) {
         className="relative z-10 max-w-4xl mx-auto px-6 text-center"
       >
         {/* Badge */}
-        <motion.div variants={fadeUp} className="mb-8">
+        <motion.div variants={fadeUp} className="flex flex-col items-center mb-8">
+          <Logo size={72} className="mb-6" />
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border text-text-secondary text-sm font-mono bg-surface/50 backdrop-blur-sm">
             <Eye size={14} className="text-gold" />
             AI-Powered Financial Intelligence

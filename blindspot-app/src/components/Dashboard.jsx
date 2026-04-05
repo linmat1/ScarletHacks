@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
-import { Eye, LogOut, Receipt, CreditCard, PieChart, Lightbulb, TrendingUp, Search, Download } from 'lucide-react'
+import { LogOut, Receipt, CreditCard, PieChart, Lightbulb, TrendingUp, Search, Download } from 'lucide-react'
+import Logo from './Logo'
 import TransactionsTab from './tabs/TransactionsTab'
 import SubscriptionsTab from './tabs/SubscriptionsTab'
 import SpendingTab from './tabs/SpendingTab'
@@ -45,9 +46,7 @@ export default function Dashboard({ insights, spendingData, dangerCalendar, conn
       <div className="border-b border-border bg-surface/50 backdrop-blur-md sticky top-0 z-30">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-gold-dim flex items-center justify-center">
-              <Eye size={16} className="text-gold" />
-            </div>
+            <Logo size={32} />
             <div>
               <h1 className="font-display font-700 text-base text-text-primary leading-none">Blind Spot</h1>
               <p className="text-[10px] text-text-muted font-mono mt-0.5">Financial Intelligence</p>
