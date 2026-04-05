@@ -1,39 +1,49 @@
-import { motion } from 'motion/react'
-import { Eye, DollarSign, AlertTriangle, TrendingDown, LogOut } from 'lucide-react'
-import InsightCard from './InsightCard'
-import SpendingChart from './SpendingChart'
-import DangerCalendar from './DangerCalendar'
+import { useState, useMemo } from 'react'
+import { motion, AnimatePresence } from 'motion/react'
+import { Eye, LogOut, Receipt, CreditCard, PieChart, Lightbulb, TrendingUp, Search, Download } from 'lucide-react'
+import TransactionsTab from './tabs/TransactionsTab'
+import SubscriptionsTab from './tabs/SubscriptionsTab'
+import SpendingTab from './tabs/SpendingTab'
+import BlindSpotsTab from './tabs/BlindSpotsTab'
+import TrendsTab from './tabs/TrendsTab'
 import AiChat from './AiChat'
+import { generateMockTransactions, detectSubscriptionsFromTransactions, computeSpendingAnalytics, computeTrends, exportToCSV } from '../data/mockTransactions'
 
-const container = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } },
-}
-const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
-}
-
-function buildStats(insights) {
-  const totalMonthly = insights.reduce((sum, i) => sum + i.amount, 0)
-  const totalAnnual = insights.reduce((sum, i) => sum + i.annualized, 0)
-  const hasDanger = insights.some((i) => i.type === 'danger' && i.severity === 'high')
-
-  return [
-    { label: 'Monthly Waste', value: `$${Math.round(totalMonthly)}`, sub: 'identified', icon: DollarSign, color: 'text-gold', bg: 'bg-gold-dim', border: 'border-gold/10' },
-    { label: 'Blind Spots', value: insights.length, sub: 'detected', icon: Eye, color: 'text-info', bg: 'bg-info-dim', border: 'border-info/10' },
-    { label: 'Danger Level', value: hasDanger ? 'HIGH' : insights.some((i) => i.type === 'danger') ? 'MED' : 'LOW', sub: 'this week', icon: AlertTriangle, color: 'text-danger', bg: 'bg-danger-dim', border: 'border-danger/10' },
-    { label: 'Annual Savings', value: `$${Math.round(totalAnnual).toLocaleString()}`, sub: 'potential', icon: TrendingDown, color: 'text-success', bg: 'bg-success-dim', border: 'border-success/10' },
-  ]
-}
+const TABS = [
+  { id: 'transactions', label: 'Transactions', icon: Receipt },
+  { id: 'subscriptions', label: 'Subscriptions', icon: CreditCard },
+  { id: 'spending', label: 'Spending', icon: PieChart },
+  { id: 'blindspots', label: 'Blind Spots', icon: Lightbulb },
+  { id: 'trends', label: 'Trends', icon: TrendingUp },
+]
 
 export default function Dashboard({ insights, spendingData, dangerCalendar, connectionInfo, onReset }) {
-  const STATS = buildStats(insights)
+  const [activeTab, setActiveTab] = useState('transactions')
+  const [searchQuery, setSearchQuery] = useState('')
+  const [searchOpen, setSearchOpen] = useState(false)
+
+  // Generate mock transactions (in real mode, these would come from the backend)
+  const transactions = useMemo(() => generateMockTransactions(), [])
+  const subscriptions = useMemo(() => detectSubscriptionsFromTransactions(transactions), [transactions])
+  const analytics = useMemo(() => computeSpendingAnalytics(transactions), [transactions])
+  const trends = useMemo(() => computeTrends(transactions), [transactions])
+
+  const filteredTransactions = useMemo(() => {
+    if (!searchQuery.trim()) return transactions
+    const q = searchQuery.toLowerCase()
+    return transactions.filter(
+      (t) =>
+        (t.merchant_name || t.name).toLowerCase().includes(q) ||
+        t.category.toLowerCase().includes(q) ||
+        t.amount.toString().includes(q)
+    )
+  }, [transactions, searchQuery])
+
   return (
     <div className="min-h-screen bg-obsidian">
-      {/* Top bar */}
+      {/* Header */}
       <div className="border-b border-border bg-surface/50 backdrop-blur-md sticky top-0 z-30">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-3.5 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-lg bg-gold-dim flex items-center justify-center">
               <Eye size={16} className="text-gold" />
@@ -43,73 +53,119 @@ export default function Dashboard({ insights, spendingData, dangerCalendar, conn
               <p className="text-[10px] text-text-muted font-mono mt-0.5">Financial Intelligence</p>
             </div>
           </div>
-          <div className="flex items-center gap-3">
-            <span className="text-xs text-text-muted font-mono hidden sm:block">
+          <div className="flex items-center gap-2">
+            {/* Search toggle */}
+            <button
+              onClick={() => setSearchOpen(!searchOpen)}
+              className="w-8 h-8 flex items-center justify-center text-text-muted hover:text-text-secondary border border-border rounded-lg transition-colors cursor-pointer"
+            >
+              <Search size={14} />
+            </button>
+            {/* Export */}
+            <button
+              onClick={() => exportToCSV(transactions)}
+              className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 text-xs text-text-muted border border-border rounded-lg hover:border-border-glow transition-colors cursor-pointer"
+            >
+              <Download size={12} /> Export
+            </button>
+            <span className="text-xs text-text-muted font-mono hidden md:block">
               {connectionInfo?.institution || 'Bank'} {connectionInfo?.accounts?.[0]?.mask ? `•••${connectionInfo.accounts[0].mask}` : ''}
             </span>
             <button
               onClick={onReset}
               className="flex items-center gap-1.5 px-3 py-1.5 text-xs text-text-muted border border-border rounded-lg hover:border-border-glow transition-colors cursor-pointer"
             >
-              <LogOut size={12} /> Disconnect
+              <LogOut size={12} /> <span className="hidden sm:inline">Disconnect</span>
             </button>
           </div>
         </div>
+
+        {/* Search bar */}
+        <AnimatePresence>
+          {searchOpen && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 'auto', opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="overflow-hidden border-t border-border"
+            >
+              <div className="max-w-7xl mx-auto px-6 lg:px-10 py-2">
+                <div className="relative">
+                  <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-text-muted" />
+                  <input
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    placeholder="Search transactions, merchants, categories..."
+                    className="w-full pl-9 pr-4 py-2 bg-card border border-border rounded-lg text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-gold/30 transition-colors"
+                    autoFocus
+                  />
+                  {searchQuery && (
+                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-[10px] font-mono text-text-muted">
+                      {filteredTransactions.length} results
+                    </span>
+                  )}
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-8 pb-10">
-        <motion.div variants={container} initial="hidden" animate="show">
-          {/* Summary stats */}
-          <motion.div variants={fadeUp} className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-            {STATS.map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                className={`p-4 rounded-xl bg-card border ${stat.border} relative overflow-hidden`}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
-              >
-                <div className="flex items-center gap-2 mb-2">
-                  <div className={`w-7 h-7 rounded-lg ${stat.bg} flex items-center justify-center`}>
-                    <stat.icon size={14} className={stat.color} />
-                  </div>
-                  <span className="text-[10px] font-mono text-text-muted uppercase tracking-wider">{stat.label}</span>
-                </div>
-                <div className={`font-mono font-600 text-2xl ${stat.color}`}>{stat.value}</div>
-                <div className="text-text-muted text-xs mt-0.5">{stat.sub}</div>
-                <div className="absolute top-0 right-0 w-24 h-24 opacity-[0.03]">
-                  <stat.icon size={96} />
-                </div>
-              </motion.div>
-            ))}
+      {/* Tab bar */}
+      <div className="border-b border-border sticky top-[52px] z-20 bg-obsidian/95 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center gap-0.5 overflow-x-auto scrollbar-none">
+          {TABS.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`relative flex items-center gap-2 px-4 py-3 text-sm font-500 transition-colors whitespace-nowrap cursor-pointer ${
+                activeTab === tab.id ? 'text-gold' : 'text-text-muted hover:text-text-secondary'
+              }`}
+            >
+              <tab.icon size={15} />
+              {tab.label}
+              {activeTab === tab.id && (
+                <motion.div
+                  layoutId="tab-indicator"
+                  className="absolute bottom-0 left-2 right-2 h-0.5 bg-gold rounded-full"
+                  transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                />
+              )}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Tab content */}
+      <main className="max-w-7xl mx-auto px-6 lg:px-10 py-6">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeTab}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.2 }}
+          >
+            {activeTab === 'transactions' && (
+              <TransactionsTab transactions={filteredTransactions} searchQuery={searchQuery} />
+            )}
+            {activeTab === 'subscriptions' && (
+              <SubscriptionsTab subscriptions={subscriptions} />
+            )}
+            {activeTab === 'spending' && (
+              <SpendingTab analytics={analytics} />
+            )}
+            {activeTab === 'blindspots' && (
+              <BlindSpotsTab insights={insights} spendingData={spendingData} dangerCalendar={dangerCalendar} />
+            )}
+            {activeTab === 'trends' && (
+              <TrendsTab data={trends} />
+            )}
           </motion.div>
-
-          {/* Main content grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-            {/* Insights column */}
-            <div className="lg:col-span-5 space-y-3">
-              <motion.div variants={fadeUp} className="flex items-center justify-between mb-1">
-                <h2 className="font-display font-600 text-sm text-text-primary">
-                  Blind Spots
-                  <span className="ml-2 text-xs font-mono text-text-muted">({insights.length})</span>
-                </h2>
-                <span className="text-[10px] font-mono text-text-muted">sorted by impact</span>
-              </motion.div>
-              {insights
-                .sort((a, b) => b.amount - a.amount)
-                .map((insight, i) => (
-                  <InsightCard key={insight.id} insight={insight} index={i} />
-                ))}
-            </div>
-
-            {/* Charts column */}
-            <div className="lg:col-span-7 space-y-6">
-              <SpendingChart data={spendingData} />
-              <DangerCalendar data={dangerCalendar} />
-            </div>
-          </div>
-        </motion.div>
-      </div>
+        </AnimatePresence>
+      </main>
 
       <AiChat insights={insights} itemId={connectionInfo?.itemId} />
     </div>

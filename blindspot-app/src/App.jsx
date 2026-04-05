@@ -4,13 +4,15 @@ import Landing from './components/Landing'
 import PlaidConnect from './components/PlaidConnect'
 import AnalysisLoader from './components/AnalysisLoader'
 import Dashboard from './components/Dashboard'
+import { INSIGHTS, SPENDING_DATA, DANGER_CALENDAR } from './data/mockData'
 
 const API = import.meta.env.VITE_API_URL || 'http://localhost:3001'
+const isDemo = new URLSearchParams(window.location.search).has('demo')
 
 export default function App() {
-  const [view, setView] = useState('landing')
-  const [connectionInfo, setConnectionInfo] = useState(null)
-  const [analysisResults, setAnalysisResults] = useState(null)
+  const [view, setView] = useState(isDemo ? 'dashboard' : 'landing')
+  const [connectionInfo, setConnectionInfo] = useState(isDemo ? { institution: 'Demo Bank', accounts: [{ mask: '1234' }] } : null)
+  const [analysisResults, setAnalysisResults] = useState(isDemo ? { insights: INSIGHTS, spendingData: SPENDING_DATA, dangerCalendar: DANGER_CALENDAR } : null)
 
   const handleConnectComplete = useCallback((info) => {
     setConnectionInfo(info)
