@@ -9,7 +9,23 @@
       "WebSearch",
       "WebFetch(domain:figma.com)",
       "WebFetch(domain:developers.figma.com)",
-      "WebFetch(domain:github.com)"
+      "WebFetch(domain:github.com)",
+      "Read(//Users/linmat/Downloads/**)",
+      "Bash(python3 -c ':*)",
+      "Bash(npm create:*)",
+      "Bash(npx:*)",
+      "Bash(npm install:*)",
+      "Bash(python3 -c \"import sys,json; print\\(json.load\\(sys.stdin\\)['version']\\)\")",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_snapshot",
+      "mcp__playwright__browser_click",
+      "mcp__playwright__browser_wait_for",
+      "mcp__playwright__browser_evaluate",
+      "Bash(xargs kill:*)",
+      "mcp__playwright__browser_resize",
+      "Bash(npm run:*)",
+      "Bash(curl:*)"
     ]
   }
 }

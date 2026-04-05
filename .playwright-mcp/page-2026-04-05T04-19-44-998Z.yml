@@ -1,0 +1,228 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e178]:
+    - generic [ref=e180]:
+      - generic [ref=e181]:
+        - img [ref=e183]
+        - generic [ref=e186]:
+          - heading "Blind Spot" [level=1] [ref=e187]
+          - paragraph [ref=e188]: Financial Intelligence
+      - generic [ref=e189]:
+        - generic [ref=e190]: Chase •••4892
+        - button "Disconnect" [ref=e191] [cursor=pointer]:
+          - img [ref=e192]
+          - text: Disconnect
+    - generic [ref=e196]:
+      - generic [ref=e197]:
+        - generic [ref=e198]:
+          - generic [ref=e199]:
+            - img [ref=e201]
+            - generic [ref=e203]: Monthly Waste
+          - generic [ref=e204]: $747
+          - generic [ref=e205]: identified
+          - img [ref=e207]
+        - generic [ref=e209]:
+          - generic [ref=e210]:
+            - img [ref=e212]
+            - generic [ref=e215]: Blind Spots
+          - generic [ref=e216]: "8"
+          - generic [ref=e217]: detected
+          - img [ref=e219]
+        - generic [ref=e222]:
+          - generic [ref=e223]:
+            - img [ref=e225]
+            - generic [ref=e227]: Danger Level
+          - generic [ref=e228]: HIGH
+          - generic [ref=e229]: this week
+          - img [ref=e231]
+        - generic [ref=e233]:
+          - generic [ref=e234]:
+            - img [ref=e236]
+            - generic [ref=e239]: Annual Savings
+          - generic [ref=e240]: $8,964
+          - generic [ref=e241]: potential
+          - img [ref=e243]
+      - generic [ref=e246]:
+        - generic [ref=e247]:
+          - generic [ref=e248]:
+            - heading "Blind Spots(8)" [level=2] [ref=e249]:
+              - text: Blind Spots
+              - generic [ref=e250]: (8)
+            - generic [ref=e251]: sorted by impact
+          - button "Danger Pattern HIGH Post-Payday Spending Spike You spend 2.3x your daily average in the 3 days after payday. This pattern has repeated for 10 out of the last 12 months — it's deeply habitual. $220 /month" [ref=e253] [cursor=pointer]:
+            - img [ref=e255]
+            - generic [ref=e257]:
+              - generic [ref=e258]:
+                - generic [ref=e259]: Danger Pattern
+                - generic [ref=e260]: HIGH
+              - heading "Post-Payday Spending Spike" [level=3] [ref=e261]
+              - paragraph [ref=e262]: You spend 2.3x your daily average in the 3 days after payday. This pattern has repeated for 10 out of the last 12 months — it's deeply habitual.
+            - generic [ref=e263]:
+              - generic [ref=e264]: $220
+              - generic [ref=e265]: /month
+            - img [ref=e267]
+          - button "Lifestyle Drift HIGH Dining Out Creep Your dining spending has quietly grown 46% over 6 months — from $290/mo to $425/mo. That's an extra $135 every month that wasn't in your budget. $135 /month" [ref=e270] [cursor=pointer]:
+            - img [ref=e272]
+            - generic [ref=e275]:
+              - generic [ref=e276]:
+                - generic [ref=e277]: Lifestyle Drift
+                - generic [ref=e278]: HIGH
+              - heading "Dining Out Creep" [level=3] [ref=e279]
+              - paragraph [ref=e280]: Your dining spending has quietly grown 46% over 6 months — from $290/mo to $425/mo. That's an extra $135 every month that wasn't in your budget.
+            - generic [ref=e281]:
+              - generic [ref=e282]: $135
+              - generic [ref=e283]: /month
+            - img [ref=e285]
+          - button "Lifestyle Drift HIGH Online Shopping Drift Amazon and online retail spending grew 63% over 6 months — from $190/mo to $305/mo. Most orders are under $30, making each one feel harmless. $115 /month" [ref=e288] [cursor=pointer]:
+            - img [ref=e290]
+            - generic [ref=e293]:
+              - generic [ref=e294]:
+                - generic [ref=e295]: Lifestyle Drift
+                - generic [ref=e296]: HIGH
+              - heading "Online Shopping Drift" [level=3] [ref=e297]
+              - paragraph [ref=e298]: Amazon and online retail spending grew 63% over 6 months — from $190/mo to $305/mo. Most orders are under $30, making each one feel harmless.
+            - generic [ref=e299]:
+              - generic [ref=e300]: $115
+              - generic [ref=e301]: /month
+            - img [ref=e303]
+          - button "Danger Pattern Weekend Splurge Pattern Friday-to-Sunday spending is 1.8x your weekday average. Dining, entertainment, and ride-shares account for 73% of the weekend premium. $95 /month" [ref=e306] [cursor=pointer]:
+            - img [ref=e308]
+            - generic [ref=e310]:
+              - generic [ref=e312]: Danger Pattern
+              - heading "Weekend Splurge Pattern" [level=3] [ref=e313]
+              - paragraph [ref=e314]: Friday-to-Sunday spending is 1.8x your weekday average. Dining, entertainment, and ride-shares account for 73% of the weekend premium.
+            - generic [ref=e315]:
+              - generic [ref=e316]: $95
+              - generic [ref=e317]: /month
+            - img [ref=e319]
+          - button "Lifestyle Drift Ride-sharing Surge Uber and Lyft spending jumped 81% — from $80/mo to $145/mo. Weekend night rides are the main driver, averaging $23 per trip. $65 /month" [ref=e322] [cursor=pointer]:
+            - img [ref=e324]
+            - generic [ref=e327]:
+              - generic [ref=e329]: Lifestyle Drift
+              - heading "Ride-sharing Surge" [level=3] [ref=e330]
+              - paragraph [ref=e331]: Uber and Lyft spending jumped 81% — from $80/mo to $145/mo. Weekend night rides are the main driver, averaging $23 per trip.
+            - generic [ref=e332]:
+              - generic [ref=e333]: $65
+              - generic [ref=e334]: /month
+            - img [ref=e336]
+          - button "Subscription HIGH Adobe Creative Cloud You're paying $54.99/mo for Adobe Creative Cloud, but you haven't opened a single Adobe app in over 90 days. $54.99 /month" [ref=e339] [cursor=pointer]:
+            - img [ref=e341]
+            - generic [ref=e343]:
+              - generic [ref=e344]:
+                - generic [ref=e345]: Subscription
+                - generic [ref=e346]: HIGH
+              - heading "Adobe Creative Cloud" [level=3] [ref=e347]
+              - paragraph [ref=e348]: You're paying $54.99/mo for Adobe Creative Cloud, but you haven't opened a single Adobe app in over 90 days.
+            - generic [ref=e349]:
+              - generic [ref=e350]: $54.99
+              - generic [ref=e351]: /month
+            - img [ref=e353]
+          - button "Subscription HIGH ClassPass Your ClassPass membership costs $49/mo, but you haven't booked a class in 45 days. You're paying for flexibility you're not using. $49 /month" [ref=e356] [cursor=pointer]:
+            - img [ref=e358]
+            - generic [ref=e360]:
+              - generic [ref=e361]:
+                - generic [ref=e362]: Subscription
+                - generic [ref=e363]: HIGH
+              - heading "ClassPass" [level=3] [ref=e364]
+              - paragraph [ref=e365]: Your ClassPass membership costs $49/mo, but you haven't booked a class in 45 days. You're paying for flexibility you're not using.
+            - generic [ref=e366]:
+              - generic [ref=e367]: $49
+              - generic [ref=e368]: /month
+            - img [ref=e370]
+          - button "Subscription Headspace Your Headspace subscription has been running for $12.99/mo, but you last meditated 120 days ago. That's $52 spent since your last session. $12.99 /month" [ref=e373] [cursor=pointer]:
+            - img [ref=e375]
+            - generic [ref=e377]:
+              - generic [ref=e379]: Subscription
+              - heading "Headspace" [level=3] [ref=e380]
+              - paragraph [ref=e381]: Your Headspace subscription has been running for $12.99/mo, but you last meditated 120 days ago. That's $52 spent since your last session.
+            - generic [ref=e382]:
+              - generic [ref=e383]: $12.99
+              - generic [ref=e384]: /month
+            - img [ref=e386]
+        - generic [ref=e388]:
+          - generic [ref=e389]:
+            - generic [ref=e390]:
+              - generic [ref=e391]:
+                - heading "Spending Drift" [level=3] [ref=e392]
+                - paragraph [ref=e393]: 12-month trend by category
+              - generic [ref=e394]: ↑ 3 rising
+            - generic [ref=e397]:
+              - generic [ref=e399]:
+                - generic [ref=e402]: dining
+                - generic [ref=e405]: entertainment
+                - generic [ref=e408]: shopping
+                - generic [ref=e411]: transport
+              - application [ref=e412]:
+                - generic [ref=e433]:
+                  - generic [ref=e434]:
+                    - generic [ref=e436]: Apr '25
+                    - generic [ref=e438]: Jul '25
+                    - generic [ref=e440]: Oct '25
+                    - generic [ref=e442]: Jan '26
+                  - generic [ref=e443]:
+                    - generic [ref=e445]: $0
+                    - generic [ref=e447]: $150
+                    - generic [ref=e449]: $300
+                    - generic [ref=e451]: $450
+                    - generic [ref=e453]: $600
+          - generic [ref=e454]:
+            - generic [ref=e455]:
+              - generic [ref=e456]:
+                - heading "Danger Calendar" [level=3] [ref=e457]
+                - paragraph [ref=e458]: April 2026 — spending risk heatmap
+              - generic [ref=e459]:
+                - generic [ref=e460]: Safe
+                - generic [ref=e462]: Warn
+                - generic [ref=e464]: Danger
+            - generic [ref=e466]:
+              - generic [ref=e467]: Sun
+              - generic [ref=e468]: Mon
+              - generic [ref=e469]: Tue
+              - generic [ref=e470]: Wed
+              - generic [ref=e471]: Thu
+              - generic [ref=e472]: Fri
+              - generic [ref=e473]: Sat
+            - generic [ref=e474]:
+              - generic [ref=e478]:
+                - generic [ref=e479]: "1"
+                - generic [ref=e480]: $129
+              - generic [ref=e481]:
+                - generic [ref=e482]: "2"
+                - generic [ref=e483]: $79
+              - generic [ref=e484]:
+                - generic [ref=e485]: "3"
+                - generic [ref=e486]: $150
+              - generic [ref=e487]:
+                - generic [ref=e488]: "4"
+                - generic [ref=e489]: $64
+              - generic [ref=e491]: "5"
+              - generic [ref=e493]: "6"
+              - generic [ref=e495]: "7"
+              - generic [ref=e497]: "8"
+              - generic [ref=e499]: "9"
+              - generic [ref=e501]: "10"
+              - generic [ref=e503]: "11"
+              - generic [ref=e505]: "12"
+              - generic [ref=e507]: "13"
+              - generic [ref=e509]: "14"
+              - generic [ref=e511]: "15"
+              - generic [ref=e513]: "16"
+              - generic [ref=e515]: "17"
+              - generic [ref=e517]: "18"
+              - generic [ref=e519]: "19"
+              - generic [ref=e521]: "20"
+              - generic [ref=e523]: "21"
+              - generic [ref=e525]: "22"
+              - generic [ref=e527]: "23"
+              - generic [ref=e529]: "24"
+              - generic [ref=e531]: "25"
+              - generic [ref=e533]: "26"
+              - generic [ref=e535]: "27"
+              - generic [ref=e537]: "28"
+              - generic [ref=e539]: "29"
+              - generic [ref=e541]: "30"
+            - generic [ref=e544]:
+              - paragraph [ref=e545]: Post-payday danger window active
+              - paragraph [ref=e546]: April 1–3 historically averages 2.3× your daily spending. Today is April 4 — you're at the tail end. Stay mindful.
+    - button [ref=e547] [cursor=pointer]:
+      - img [ref=e548]
+  - generic [ref=e550]: $0

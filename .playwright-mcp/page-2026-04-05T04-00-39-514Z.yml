@@ -1,0 +1,25 @@
+- generic [ref=e65]:
+  - generic [ref=e66]:
+    - generic [ref=e67]:
+      - img [ref=e69]
+      - generic [ref=e72]: PLAID SECURE CONNECT
+    - heading "Select your bank" [level=2] [ref=e73]
+  - generic [ref=e75]:
+    - button "🏦 Chase" [ref=e76] [cursor=pointer]:
+      - generic [ref=e77]: 🏦
+      - generic [ref=e78]: Chase
+    - button "🏛️ Bank of America" [ref=e79] [cursor=pointer]:
+      - generic [ref=e80]: 🏛️
+      - generic [ref=e81]: Bank of America
+    - button "🏦 Wells Fargo" [ref=e82] [cursor=pointer]:
+      - generic [ref=e83]: 🏦
+      - generic [ref=e84]: Wells Fargo
+    - button "💳 Capital One" [ref=e85] [cursor=pointer]:
+      - generic [ref=e86]: 💳
+      - generic [ref=e87]: Capital One
+    - button "🏦 Citi" [ref=e88] [cursor=pointer]:
+      - generic [ref=e89]: 🏦
+      - generic [ref=e90]: Citi
+    - button "🏛️ US Bank" [ref=e91] [cursor=pointer]:
+      - generic [ref=e92]: 🏛️
+      - generic [ref=e93]: US Bank

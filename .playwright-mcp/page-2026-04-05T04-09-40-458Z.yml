@@ -1,0 +1,45 @@
+- generic [ref=e9]:
+  - generic [ref=e11]:
+    - img [ref=e12]
+    - text: AI-Powered Financial Intelligence
+  - heading "Your money has secrets. Let's find them." [level=1] [ref=e15]:
+    - text: Your money has
+    - text: secrets.
+    - text: Let's find them.
+  - paragraph [ref=e16]: Most budgeting apps show you the past. Blind Spot finds the patterns you can't see — forgotten subscriptions, lifestyle creep, and your most dangerous spending days — before they cost you.
+  - generic [ref=e17]:
+    - generic [ref=e18]:
+      - generic [ref=e19]: $380
+      - generic [ref=e20]: avg yearly waste found
+    - generic [ref=e21]:
+      - generic [ref=e22]: "3"
+      - generic [ref=e23]: detection engines
+    - generic [ref=e24]:
+      - generic [ref=e25]: 60s
+      - generic [ref=e26]: to first insight
+  - button "Connect Your Bank" [ref=e28] [cursor=pointer]:
+    - generic [ref=e29]: Connect Your Bank
+    - img [ref=e30]
+  - generic [ref=e33]:
+    - generic [ref=e34]:
+      - img [ref=e35]
+      - text: Read-only access
+    - generic [ref=e37]:
+      - img [ref=e38]
+      - text: 256-bit encryption
+    - generic [ref=e40]:
+      - img [ref=e41]
+      - text: Powered by Plaid
+  - generic [ref=e44]:
+    - generic [ref=e45]:
+      - img [ref=e47]
+      - heading "Subscription Scanner" [level=3] [ref=e49]
+      - paragraph [ref=e50]: Finds forgotten recurring charges draining your account
+    - generic [ref=e51]:
+      - img [ref=e53]
+      - heading "Drift Detector" [level=3] [ref=e56]
+      - paragraph [ref=e57]: Spots lifestyle inflation creeping up month over month
+    - generic [ref=e58]:
+      - img [ref=e60]
+      - heading "Danger Predictor" [level=3] [ref=e62]
+      - paragraph [ref=e63]: Warns you before your historically worst spending days

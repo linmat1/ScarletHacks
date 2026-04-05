@@ -1,0 +1,19 @@
+- generic [ref=e65]:
+  - generic [ref=e66]:
+    - generic [ref=e67]:
+      - img [ref=e69]
+      - generic [ref=e72]: PLAID SECURE CONNECT
+    - heading "Sign in to Chase" [level=2] [ref=e99]
+  - generic [ref=e100]:
+    - generic [ref=e101]:
+      - generic [ref=e102]: USERNAME
+      - textbox [ref=e103]: user_good
+    - generic [ref=e104]:
+      - generic [ref=e105]: PASSWORD
+      - textbox [ref=e106]: pass_good
+    - paragraph [ref=e107]:
+      - img [ref=e108]
+      - text: Sandbox credentials — no real data is accessed
+    - button "Sign In" [ref=e111] [cursor=pointer]:
+      - text: Sign In
+      - img [ref=e112]

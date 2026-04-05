@@ -1,0 +1,25 @@
+- generic [ref=e123]:
+  - generic [ref=e125]:
+    - img [ref=e126]
+    - generic [ref=e129]:
+      - generic [ref=e130]: "3"
+      - generic [ref=e131]: blind spots
+  - heading "Analyzing your finances" [level=2] [ref=e132]
+  - paragraph [ref=e133]: Running 3 detection engines on 847 transactions
+  - generic [ref=e134]:
+    - generic [ref=e135]:
+      - img [ref=e138]
+      - generic [ref=e140]:
+        - paragraph [ref=e141]: Scanning for forgotten subscriptions
+        - paragraph [ref=e142]: Checking recurring charges across 847 transactions...
+    - generic [ref=e143]:
+      - img [ref=e145]
+      - generic [ref=e148]:
+        - paragraph [ref=e149]: Detecting lifestyle drift
+        - paragraph [ref=e150]: Comparing monthly category trends over 12 months...
+    - generic [ref=e153]:
+      - img [ref=e155]
+      - paragraph [ref=e158]: Predicting danger windows
+    - generic [ref=e159]:
+      - img [ref=e161]
+      - paragraph [ref=e165]: Generating insights with AI

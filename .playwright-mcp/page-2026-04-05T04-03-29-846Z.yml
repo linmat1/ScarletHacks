@@ -1,0 +1,10 @@
+- generic [ref=e65]:
+  - generic [ref=e66]:
+    - generic [ref=e67]:
+      - img [ref=e69]
+      - generic [ref=e72]: PLAID SECURE CONNECT
+    - heading "Connecting..." [level=2] [ref=e114]
+  - generic [ref=e115]:
+    - img [ref=e117]
+    - paragraph [ref=e119]: Establishing secure connection...
+    - paragraph [ref=e120]: Fetching 12 months of transactions
