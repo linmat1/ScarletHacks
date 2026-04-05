@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import { MessageSquare, Send, X, Sparkles } from 'lucide-react'
 
-const API = 'http://localhost:3001'
+const API = import.meta.env.VITE_API_URL || 'http://localhost:3001'
 
 const PRESET_QUESTIONS = [
   'Which blind spot should I fix first?',

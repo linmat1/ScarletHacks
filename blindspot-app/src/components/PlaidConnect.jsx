@@ -3,7 +3,7 @@ import { motion } from 'motion/react'
 import { usePlaidLink } from 'react-plaid-link'
 import { Lock, Loader2, Check } from 'lucide-react'
 
-const API = 'http://localhost:3001'
+const API = import.meta.env.VITE_API_URL || 'http://localhost:3001'
 
 const backdrop = {
   hidden: { opacity: 0 },

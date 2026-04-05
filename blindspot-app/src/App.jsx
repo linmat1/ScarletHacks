@@ -5,7 +5,7 @@ import PlaidConnect from './components/PlaidConnect'
 import AnalysisLoader from './components/AnalysisLoader'
 import Dashboard from './components/Dashboard'
 
-const API = 'http://localhost:3001'
+const API = import.meta.env.VITE_API_URL || 'http://localhost:3001'
 
 export default function App() {
   const [view, setView] = useState('landing')
